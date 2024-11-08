@@ -148,3 +148,7 @@ ul {
     background-color: transparent;
     border: none;
 }
+
+.container-lista {
+    width: 100%;
+}
