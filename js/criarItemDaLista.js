@@ -1,5 +1,6 @@
 import { excluirItem } from "./excluirItem.js";
 import { verificarListaComprados } from "./verificarListaComprados.js";
+import { editarItem } from "./editarItem.js";
 
 const listaDeCompras = document.getElementById('lista-de-compras');
 const listaComprados = document.getElementById('lista-comprados');
@@ -77,6 +78,10 @@ export function criarItemDaLista(item) {
     const imagemEditar = document.createElement('img');
     imagemEditar.src = 'img/edit.svg';
     imagemEditar.alt = 'Editar';
+
+    botaoEditar.addEventListener('click', function () {
+        editarItem(itemDaLista);
+    });
 
     botaoEditar.appendChild(imagemEditar);
     containerBotoes.appendChild(botaoEditar);
