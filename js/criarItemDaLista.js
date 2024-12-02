@@ -1,6 +1,7 @@
 import { excluirItem } from "./excluirItem.js";
 import { verificarListaComprados } from "./verificarListaComprados.js";
 import { editarItem } from "./editarItem.js";
+import { obterDataAtual } from "./obterDataAtual.js";
 
 const listaDeCompras = document.getElementById('lista-de-compras');
 const listaComprados = document.getElementById('lista-comprados');
@@ -90,7 +91,8 @@ export function criarItemDaLista(item) {
     containerItemLista.appendChild(containerBotoes);
 
     const itemData = document.createElement('p');
-    itemData.innerText = `${new Date().toLocaleDateString('pt-BR', {weekday: 'long'})} (${new Date().toLocaleDateString()}) às ${new Date().toLocaleTimeString('pt-BR', {hour: 'numeric', minute: 'numeric'})}`;
+    // itemData.innerText = `${new Date().toLocaleDateString('pt-BR', {weekday: 'long'})} (${new Date().toLocaleDateString()}) às ${new Date().toLocaleTimeString('pt-BR', {hour: 'numeric', minute: 'numeric'})}`;
+    itemData.innerText = obterDataAtual();
     itemData.classList.add('item-lista-texto');
 
     itemDaLista.appendChild(containerItemLista);

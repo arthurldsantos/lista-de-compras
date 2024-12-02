@@ -1,3 +1,5 @@
+import { obterDataAtual } from "./obterDataAtual.js";
+
 export const editarItem = (elemento) => {
     let novoItem = prompt('Digite o novo nome do item:');
 
@@ -12,5 +14,8 @@ export const editarItem = (elemento) => {
             elemento.querySelector('.checkbox-customizado').classList.add('checked');
             itemTextoAtualizado.style.textDecoration = 'line-through';
         }
+
+        const dataDeCriacao = elemento.querySelector('.item-lista-texto');
+        dataDeCriacao.textContent = obterDataAtual();
     }
 }
